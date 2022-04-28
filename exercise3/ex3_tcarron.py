@@ -51,9 +51,10 @@ frame=data[:,:,0]
 ##data = "radio-mapfits.sec"
 ###cube=SpectralCube.read(data)
 ##velo, dec, ra = cube.world[:]
-x=np.linspace(0,1,201)
+x=np.linspace(0,201,201)
 fig, ax=plt.subplots(1)
 im=ax.imshow(integrated,'cubehelix')
+plt.savefig("plots/integrated_intensity_map.png",dpi=400,bbox_inches="tight")
 plt.colorbar(im)
 
 
@@ -63,14 +64,19 @@ plt.colorbar(im1)
 
 fig2, ax2=plt.subplots(1)
 im2=ax2.imshow(map1,'cubehelix')
+plt.savefig("plots/map_1.png",dpi=400,bbox_inches="tight")
 plt.colorbar(im2)
 
 fig3, ax3=plt.subplots(1)
 im3=ax3.imshow(map2,'cubehelix')
+plt.savefig("plots/map_2.png",dpi=400,bbox_inches="tight")
 plt.colorbar(im3)
 
 fig4, ax4=plt.subplots(1)
 im4=ax4.plot(x,avg_spec)#,'cubehelix')
+plt.xlabel("channel")
+plt.ylabel("Intensity")
+plt.savefig("plots/avg_spec.png",dpi=400,bbox_inches="tight")
 #plt.colorbar(im4)
 
 #d. Plot every spectrum and overlay the average spectrum. Describe how the emission changes
@@ -81,16 +87,18 @@ im4=ax4.plot(x,avg_spec)#,'cubehelix')
     #for j in range(5):
         #for k in range(201):
             #spectra[i,j,k]=data[i,j,k]
+plt.show()
 
 
-fig5, ax5=plt.subplots(1)
 for i in range(5):
     for j in range(5):
-        im5=ax5.plot(x,data[i,j,:],color='red')#,'cubehelix')
-
-im6=ax5.plot(x,avg_spec,color='black')
+        fig5, ax5=plt.subplots(1)
+        ax5.plot(x,data[i,j,:],color='red')#,label="every spectrum")#,'cubehelix')
+        ax5.plot(x,avg_spec,color='black')#,label="average spectrum")
+        ax5.set_xlabel("channel")
+        ax5.set_ylabel("Intensity")
+        plt.savefig("plots/every_spec"+str(i)+"i"+str(j)+"j"+".png",dpi=400,bbox_inches="tight")
 #plt.colorbar(im4)
-plt.show()
 
 
 

@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2212}{-}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{amsmath}
+\usepackage[version=4]{mhchem}
+\usepackage{gensymb}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{siunitx}
+\usepackage{subfig}
+\usepackage{physics}
+\usepackage{tabu}
+\usepackage{booktabs}
+\usepackage{csquotes}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{babel,csquotes,xpatch}% recommende
+\sisetup{exponent-product = \cdot,
+	separate-uncertainty}
+\usepackage[backend=biber, style=numeric, bibstyle=phys, sorting=none, maxbibnames=99, isbn=false, url=false, date=year]{biblatex}
+%\addbibresource{tomcarron_clusters5.bib}
+\usepackage{hyperref}
+\usepackage[noabbrev]{cleveref}
+\geometry{margin=0.5in}
+% \pagecolor[rgb]{0,0,0} %black
+% \color[rgb]{0.5,0.5,0.5} %grey
+
+
+\begin{document}
+
+\begin{titlepage}
+	\pagenumbering{roman}
+	\centering
+	\vspace*{\fill}
+	\LARGE \scshape
+	
+	\rule{\linewidth}{1pt}
+	\Huge \bfseries Data Analysis in Physics and Astronomy \\[-1.5ex]
+
+	\rule{\linewidth}{1pt}
+	\vfill
+	\vfill
+	\LARGE \scshape
+	Exercise 8 \\
+    \Large \normalfont
+	\begin{tabu} to \linewidth {X[c]X[c]X[c]}\\
+			\vspace{1cm}\\
+		\multicolumn{3}{c}{\emph{Author:}} \\
+		\multicolumn{3}{c}{Tom Carron} \\
+		\vspace{2cm}\\
+		\multicolumn{3}{c}{\today}
+	\end{tabu}
+	\vfill
+	\vfill
+	%\includegraphics[width=0.5\textwidth]{images/Eagle_nebula_pillars.jpg} \\
+	%\tiny Credit: NASA, Jeff Hester, and Paul Scowen (Arizona State University) \\ http://hubblesite.org/newscenter/newsdesk/archive/releases/2003/34/image/a
+	\vfill
+	\vfill
+\end{titlepage}
+
+\setcounter{page}{2}
+%\tableofcontents
+%\listoffigures
+% \listoftables
+\newpage
+\pagenumbering{arabic}%r[rgb]{0.5,0.5,0.5} %grey
+
+
+
+%\input{chapters/1}
+%\newpage
+\input{chapters/2}
+
+\end{document}
